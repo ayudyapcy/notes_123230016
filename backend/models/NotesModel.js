@@ -1,15 +1,19 @@
 import { Sequelize } from "sequelize";
 import db from "../config/database.js";
 
-const Notes = db.define("notes", {
-  judul: Sequelize.STRING,
-  isi: Sequelize.TEXT,
-  tanggal_dibuat: {
-    type: Sequelize.DATE,
-    defaultValue: Sequelize.NOW
+const Notes = db.define(
+  "notes",
+  {
+    judul: Sequelize.STRING,
+    isi: Sequelize.TEXT,
+    tanggal_dibuat: {
+      type: Sequelize.DATE,
+      defaultValue: Sequelize.NOW,
+    },
+  },
+  {
+    timestamps: false,
   }
-});
-
-db.sync().then(() => console.log("Database synced"));
+);
 
 export default Notes;
