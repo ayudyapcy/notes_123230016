@@ -1,4 +1,4 @@
-const API_URL = " https://notes-backend-226557433828.us-central1.run.app";
+const API_URL = "https://be-notes-ayudya-226557433828.us-central1.run.app";
 
 async function fetchNotes() {
   const res = await fetch(API_URL + "notes");
