@@ -1,0 +1,24 @@
+GET http://localhost:3000/notes
+
+###
+POST http://localhost:3000/add-notes
+Content-Type: application/json
+
+{
+    "judul": "Catatan Praktikum",
+    "isi": "Hari pertama praktikum, semoga lancar",
+    "tanggal": "2026-03-25"
+}
+
+###
+PUT http://localhost:3000/notes/2
+Content-Type: application/json
+
+{
+    "judul": "Catatan",
+    "isi": "AW",
+    "tanggal": "2026-03-25"
+}
+
+###
+DELETE http://localhost:3000/notes/2

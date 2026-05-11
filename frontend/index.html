@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Notes App</title>
+
+  <!-- Google Font Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+  <h1>Notes</h1>
+
+  <!-- tambahan kata-kata -->
+  <p class="subtitle"> 123230016 </p>
+
+  <div class="form-box">
+    <input type="hidden" id="noteId">
+
+    <!-- label kecil -->
+    <label> Tulis Judul Catatan ! </label>
+    <input id="judul" placeholder="Misalnya: Praktikum TCC">
+
+    <label> Isi Catatan !</label>
+    <textarea id="isi" placeholder="Tulis catatanmu di sini ..."></textarea>
+
+    <button onclick="saveNote()">Simpan</button>
+  </div>
+
+  <!-- bagian bawah -->
+  <p class="notes-title">Daftar Catatan</p>
+
+  <div id="notesList" class="grid"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

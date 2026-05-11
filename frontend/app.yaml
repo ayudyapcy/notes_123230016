@@ -1,0 +1,23 @@
+service: default
+runtime: nodejs20
+
+handlers:
+  # Handler untuk file CSS
+  - url: /(.*\.css)
+    static_files: \1
+    upload: .*\.css
+
+  # Handler untuk file JS
+  - url: /(.*\.js)
+    static_files: \1
+    upload: .*\.js
+
+  # Handler untuk gambar (jika ada)
+  - url: /(.*\.(png|jpg|ico))
+    static_files: \1
+    upload: (.*\.(png|jpg|ico))
+
+  # Handler utama untuk index.html
+  - url: /.*
+    static_files: index.html
+    upload: index.html
