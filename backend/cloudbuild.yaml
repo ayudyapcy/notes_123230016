@@ -1,12 +1,12 @@
 steps:
   # Build Docker image
   - name: "gcr.io/cloud-builders/docker"
-    args: ["build", "-t", "gcr.io/$PROJECT_ID/backend-ayudya", "."]
+    args: ["build", "-t", "gcr.io/$PROJECT_ID/be-notes-ayudya", "."]
     dir: "backend"
 
   # Push image ke Artifact Registry
   - name: "gcr.io/cloud-builders/docker"
-    args: ["push", "gcr.io/$PROJECT_ID/backend-ayudya"]
+    args: ["push", "gcr.io/$PROJECT_ID/be-notes-ayudya"]
 
   # Deploy ke Cloud Run
   - name: "gcr.io/cloud-builders/gcloud"
@@ -14,9 +14,9 @@ steps:
       [
         "run",
         "deploy",
-        "backend-ayudya",
+        "be-notes-ayudya",
         "--image",
-        "gcr.io/$PROJECT_ID/backend-ayudya",
+        "gcr.io/$PROJECT_ID/be-notes-ayudya",
         "--timeout",
         "1000s",
         "--region",
