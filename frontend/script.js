@@ -1,4 +1,4 @@
-const API_URL = "https://be-notes-ayudya-226557433828.us-central1.run.app";
+const API_URL = "https://be-notes-ayudya-226557433828.us-central1.run.app/";
 
 async function fetchNotes() {
   const res = await fetch(API_URL + "notes");
@@ -12,7 +12,7 @@ async function fetchNotes() {
       <div class="note">
         <h3>${n.judul}</h3>
         <p>${n.isi}</p>
-        <small>${new Date(n.tanggal).toLocaleDateString()}</small>
+        <small>${new Date(n.tanggal_dibuat).toLocaleDateString()}</small>
 
         <div class="actions">
           <button onclick="editNote(${n.id}, \`${n.judul}\`, \`${n.isi}\`)">Edit</button>
